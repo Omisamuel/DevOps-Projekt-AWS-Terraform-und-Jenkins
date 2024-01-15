@@ -26,7 +26,7 @@ pipeline {
                        withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'aws-crendentails-omisam']]){
                             dir('infra') {
                             sh 'echo "=================Terraform Init=================="'
-                            sh 'terraform init'
+                            sh 'terraform init -upgrade'
                         }
                     }
                 }
