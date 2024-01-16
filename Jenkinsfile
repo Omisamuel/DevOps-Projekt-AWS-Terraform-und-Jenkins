@@ -17,7 +17,7 @@ pipeline {
                 git branch: 'main',
                     url: 'https://github.com/Omisamuel/devops-project-01-2024.git'
 
-                sh "ls -lart"
+                sh "ls -ltra"
             }
         }
 
