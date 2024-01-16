@@ -30,7 +30,7 @@ module "ec2" {
 }
 
 module "lb_target_group" {
-  source                   = "load-balancer-target-group"
+  source                   = "./load-balancer-target-group"
   lb_target_group_name     = "dev-proj-1-lb-target-group"
   lb_target_group_port     = 5000
   lb_target_group_protocol = "HTTP"
@@ -40,7 +40,7 @@ module "lb_target_group" {
 
 
 module "alb" {
-  source                    = "load-balancer"
+  source                    = "./load-balancer"
   lb_name                   = "dev-proj-1-alb"
   is_external               = false
   lb_type                   = "application"
@@ -59,21 +59,21 @@ module "alb" {
 }
 
 module "hosted_zone" {
-  source          = "hosted-zone"
+  source          = "./hosted-zone"
   domain_name     = var.domain_name
   aws_lb_dns_name = module.alb.aws_lb_dns_name
   aws_lb_zone_id  = module.alb.aws_lb_zone_id
 }
 
 module "aws_ceritification_manager" {
-  source         = "certificate-manager"
+  source         = "./certificate-manager"
   domain_name    = var.domain_name
   hosted_zone_id = module.hosted_zone.hosted_zone_id
 }
 
 
 module "rds_db_instance" {
-  source               = "rds"
+  source               = "./rds"
   db_subnet_group_name = "dev_proj_1_rds_subnet_group"
   subnet_groups        = tolist(module.networking.dev_proj_1_public_subnets)
   rds_mysql_sg_id      = module.security_group.rds_mysql_sg_id
