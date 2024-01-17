@@ -28,7 +28,7 @@ resource "aws_route53_record" "validation" {
 }
 
 
-resource "aws_acm_certificate_validation" "dev_proj_1_acm_arn" {
+/*resource "aws_acm_certificate_validation" "dev_proj_1_acm_arn" {
   certificate_arn         = aws_acm_certificate.dev_proj_1_acm_arn.arn
   validation_record_fqdns = [for record in aws_route53_record.validation : record.fqdn]
   #validation_record_fqdns = ["${aws_route53_record.validation.fqdn}"]
@@ -37,7 +37,7 @@ resource "aws_acm_certificate_validation" "dev_proj_1_acm_arn" {
   timeouts {
     create = "120m"
   }
-}
+}*/
 
 
 
