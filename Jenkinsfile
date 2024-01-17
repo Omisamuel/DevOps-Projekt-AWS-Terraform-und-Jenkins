@@ -39,7 +39,7 @@ pipeline {
                        withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'aws-crendentails-omisam']]){
                             dir('infra') {
                                 sh 'echo "=================Terraform Plan=================="'
-                                sh 'terraform plan'
+                                sh 'terraform plan -out myplan'
                             }
                         }
                     }
