@@ -1,10 +1,28 @@
-variable "ami_id" {}
-variable "instance_type" {}
-variable "tag_name" {}
-variable "public_key" {}
-variable "subnet_id" {}
-variable "sg_enable_ssh_https" {}
-variable "enable_public_ip_address" {}
-variable "user_data_install_apache" {}
-variable "ec2_sg_name_for_python_api" {}
+variable "ami_id" {
+  default = null
+}
+variable "instance_type" {
+  default = null
+}
+variable "tag_name" {
+  default = null
+}
+variable "public_key" {
+  default = null
+}
+variable "subnet_id" {
+  default = null
+}
+variable "sg_enable_ssh_https" {
+  default = null
+}
+variable "enable_public_ip_address" {
+  default = null
+}
+variable "user_data_install_apache" {
+  default = null
+}
+variable "ec2_sg_name_for_python_api" {
+  default = null
+}
 
