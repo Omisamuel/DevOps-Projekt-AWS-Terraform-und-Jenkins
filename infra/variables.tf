@@ -50,6 +50,7 @@ variable "public_key" {
   type        = string
   description = "DevOps Project 1 Public key for EC2 instance"
   default = null
+  sensitive = true
 }
 
 variable "ec2_ami_id" {
