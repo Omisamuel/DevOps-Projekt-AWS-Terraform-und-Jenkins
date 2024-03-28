@@ -26,38 +26,3 @@ resource "aws_route53_record" "validation" {
   records = [each.value.record]
   ttl     = 60
 }
-
-
-/*resource "aws_acm_certificate_validation" "dev_proj_1_acm_arn" {
-  certificate_arn         = aws_acm_certificate.dev_proj_1_acm_arn.arn
-  validation_record_fqdns = [for record in aws_route53_record.validation : record.fqdn]
-  #validation_record_fqdns = ["${aws_route53_record.validation.fqdn}"]
-
-
-  timeouts {
-    create = "120m"
-  }
-}*/
-
-
-
-
-/*resource "aws_acm_certificate" "dev_proj_1_acm_arn" {
-  domain_name       = var.domain_name
-  validation_method = "EMAIL"
-
-  tags = {
-    Environment = "production"
-  }
-}
-
-resource "aws_acm_certificate_validation" "dev_proj_1_acm_arn" {
-  certificate_arn         = aws_acm_certificate.dev_proj_1_acm_arn.arn
-
-  # Since validation is done via email, no DNS validation records are required
-  # validation_record_fqdns is not needed here
-
-  timeouts {
-    create = "120m"
-  }
-}*/
