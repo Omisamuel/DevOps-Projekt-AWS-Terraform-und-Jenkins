@@ -65,9 +65,12 @@ variable "ec2_user_data_install_apache" {
   default = null
 }
 
-variable domain_name {
-  domain = "omsam.de"
+variable "domain_name" {
+  description = "The domain name for the ACM certificate"
+  type        = string
+  default     = "omsam.de"
 }
+
 
 /*
 variable "domain_name" {
