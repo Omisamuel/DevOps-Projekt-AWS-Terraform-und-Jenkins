@@ -8,7 +8,7 @@ variable "tag_name" {
   default = null
 }
 variable "public_key" {
-  description = "The public key material"
+  description = "The public key material for the EC2 key pair."
   type        = string
 }
 
