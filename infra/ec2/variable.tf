@@ -8,8 +8,10 @@ variable "tag_name" {
   default = null
 }
 variable "public_key" {
-  default = null
+  description = "The public key material"
+  type        = string
 }
+
 variable "subnet_id" {
   default = null
 }
