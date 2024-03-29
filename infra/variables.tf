@@ -45,13 +45,12 @@ variable "us_availability_zone" {
   description = "Availability Zones"
   default = null
 }
-
 variable "public_key" {
+  description = "Public SSH key to be used for the aws_key_pair resource."
   type        = string
-  description = "DevOps Project 1 Public key for EC2 instance"
-  default = null
   sensitive = true
 }
+
 
 variable "ec2_ami_id" {
   type        = string

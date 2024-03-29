@@ -17,10 +17,10 @@ variable "tag_name" {
 }
 
 variable "public_key" {
+  description = "Public SSH key to be used for the aws_key_pair resource."
   type        = string
-  description = "The public key material for the EC2 key pair."
-  # No default is provided; must be explicitly specified.
 }
+
 
 variable "subnet_id" {
   type        = string
