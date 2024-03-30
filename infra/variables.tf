@@ -49,7 +49,7 @@ variable "us_availability_zone" {
 variable "public_key" {
   description = "Public SSH key to be used for the aws_key_pair resource."
   type        = string
-  #default = null
+  default = null
  # sensitive = true
 }
 
