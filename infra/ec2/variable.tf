@@ -7,7 +7,7 @@ variable "ami_id" {
 variable "instance_type" {
   type        = string
   description = "The type of instance to start."
-  default     = "t3.micro"  # Setting a sensible default or keep null to require explicit value.
+  default     = null  # Setting a sensible default or keep null to require explicit value.
 }
 
 variable "tag_name" {
@@ -37,7 +37,7 @@ variable "sg_enable_ssh_https" {
 variable "enable_public_ip_address" {
   type        = bool
   description = "Whether to associate a public IP address with an instance in a VPC."
-  default     = true  # Adjust based on whether instances generally need public IPs in your use case.
+  default     = null  # Adjust based on whether instances generally need public IPs in your use case.
 }
 
 variable "user_data_install_apache" {
